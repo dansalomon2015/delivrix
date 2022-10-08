@@ -1,0 +1,47 @@
+export default {
+    launcher: {
+        manage_orders: "Gérez vos commandes",
+        and_delivry_process: "et vos livraisons\ncomme un pro",
+        register_orders: "Enregistrez vos commqndes",
+        and_assing_delivry: "et assignez les tâches de livraison\naux membres de votre équipe",
+        follow_delivry_status: "Suivre le status",
+        in_realtime: "de vos livraisons en temps réel",
+        skip: "Passer",
+        login_gmail: "Se connecter avec Gmail",
+    },
+    error: {
+        unknown_error: "Une erreur inconnue est survenue. Veuillez réesssayer.",
+        at_least: "Au moins {{number}} caractères",
+        unable_to_add: "Impossible d'ajouter cet utilisateur à votre équipe",
+        unable_to_find: "Impossible d'identifier cet utilisateur",
+    },
+    profile: {
+        _: "Profil",
+        logout: "Déconnexion",
+        confirm_logout: "Confirmer la déconnexion",
+        want_logout: "Êtes vous sûr de vouloir vous déconnecter ?",
+    },
+    dialog: {
+        yes: "Oui",
+        no: "Non",
+        close: "Fermer",
+        cancel: "Annuler",
+        retry: "Réessayer",
+        add_success: "{{username}} est maintenant un membre de votre équipe",
+        new_member: "Nouvequ co-équipier",
+    },
+    shop: {
+        new: "Nouvelle boutique",
+        name: "Nom",
+        location: "Localisation",
+        save: "Enregistrer",
+        create_new_shop: "Créer une nouvelle boutique",
+        owner: "Proprio",
+        admin: "Admin",
+        scan_to_add: "Scan pour m'ajouter\ndans ton équipe",
+        add: "Ajouter",
+    },
+    home: {
+        join_team: "Rejoindre un équipe",
+    },
+};

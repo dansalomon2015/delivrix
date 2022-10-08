@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1086305358297",
+    "project_id": "delivrix-c14f0",
+    "storage_bucket": "delivrix-c14f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086305358297:android:0ce8ab6d3eb778ba5489c8",
+        "android_client_info": {
+          "package_name": "com.techlite.delivrix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1086305358297-abj9o8bjfqk4trd064q3a54ovl4ifr53.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techlite.delivrix",
+            "certificate_hash": "72465c102c8ba8d66aa196ed7cc9a7cdd5159e96"
+          }
+        },
+        {
+          "client_id": "1086305358297-f0hli8j9m5nu4a80dk407924o47vegr1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsWimsQy41SBHVlDAgZUNhYgh34rLt_20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1086305358297-f0hli8j9m5nu4a80dk407924o47vegr1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

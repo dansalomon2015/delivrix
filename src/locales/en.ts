@@ -1,0 +1,47 @@
+export default {
+    launcher: {
+        manage_orders: "Manage your orders",
+        and_delivry_process: "and delivery process\nlike a pro",
+        register_orders: "Register your oders",
+        and_assing_delivry: "and assing delivry task\nyour team members",
+        follow_delivry_status: "Follow the status",
+        in_realtime: "of your delivery in realtime",
+        skip: "Skip",
+        login_gmail: "Login with Gmail",
+    },
+    error: {
+        unknown_error: "An unexpected error occurs. Please try again later.",
+        at_least: "At least {{number}} digits",
+        unable_to_add: "Unable to add this user to your team",
+        unable_to_find: "Unable to identify this user",
+    },
+    profile: {
+        _: "Profile",
+        logout: "Logout",
+        confirm_logout: "Confirm logout",
+        want_logout: "Are you sure you wnat to logout ?",
+    },
+    dialog: {
+        yes: "Yes",
+        no: "No",
+        close: "Close",
+        cancel: "Cancel",
+        retry: "Retry",
+        add_success: "{{username}} is now a member of your team",
+        new_member: "New team member",
+    },
+    shop: {
+        new: "New Shop",
+        name: "Name",
+        location: "Location",
+        save: "Save",
+        create_new_shop: "Create a new shop",
+        owner: "Owner",
+        admin: "Admin",
+        scan_to_add: "Scan to add me\nin your team",
+        add: "Add",
+    },
+    home: {
+        join_team: "Join a team",
+    },
+};

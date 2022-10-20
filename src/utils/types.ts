@@ -44,34 +44,42 @@ export type UserMemberType = {
 };
 
 export type ProductType = {
-    id: string;
+    id?: string;
     name: string;
     price: number;
+    quantity: number;
+    shopId: string;
     createdAt: number;
 };
 
 export type ClientType = {
-    id: string;
+    id?: string;
     name: string;
     location: string;
     phone: string;
+    shopId: string;
     createdAt: number;
 };
 
 export enum PaymentMethods {
     CASH = "CASH",
     MOBILE = "MOBILE",
+    CARD = "CARD",
 }
 
 export type OrderType = {
-    id: string;
-    product: ProductType;
+    id?: string;
+    products: ProductType[];
     client: ClientType;
     location: string;
-    assignedTo?: UserType;
+    assignedTo: UserType | null;
     shop: ShopType;
     status: ORDER_STATUS;
     paymentMethod: PaymentMethods;
+    toPaid: number;
+    deliveryDate: number;
+    deliveryFee: number;
+    createdBy: UserType;
     createdAt: number;
 };
 

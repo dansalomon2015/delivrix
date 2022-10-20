@@ -9,4 +9,6 @@ export const Colors = {
     primary_light: "#FFF4E6",
     primary_green: "#EFF5C2",
     dark: "#212527",
+    light_gray: "#F2F2F2",
+    whatsapp: "#25D366",
 };

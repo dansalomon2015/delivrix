@@ -18,7 +18,7 @@ interface Props {
 
 export const ShopItem: FC<Props> = ({ shop, size }) => {
     const user = useAppSelector((state) => state.rootReducer.user);
-    const { members, canAddMember } = useStore({ shopId: shop.id, userId: user?.id });
+    const { members, isAdmin } = useStore({ shopId: shop.id, userId: user?.id });
 
     const [addModalVisible, setAddModalVisible] = useState(false);
 
@@ -39,7 +39,7 @@ export const ShopItem: FC<Props> = ({ shop, size }) => {
                 <View style={styles.details}>
                     <TextMedium
                         numberOfLines={2}
-                        fontSize={FontSize.H4}
+                        fontSize={FontSize.H4 - 2}
                         lineHeight={FontSize.H4 + 4}
                         color={Colors.grey}
                     >
@@ -57,7 +57,7 @@ export const ShopItem: FC<Props> = ({ shop, size }) => {
                                 return <Avatar item={user} size="xs" key={i} ml={i === 0 ? 0 : -5} />;
                             })}
                         </View>
-                        {canAddMember && (
+                        {isAdmin && (
                             <OutlineButton
                                 title={I18n.t("shop.add")}
                                 renderLeftIcon={
@@ -71,7 +71,7 @@ export const ShopItem: FC<Props> = ({ shop, size }) => {
                 </View>
             </View>
             <View>
-                <Icon name="chevron-right" color={Colors.dark} size={32 * rem} />
+                <Icon name="information" color={Colors.grey} size={24 * rem} />
             </View>
 
             <AddMemberModal shop={shop} visible={addModalVisible} close={() => setAddModalVisible(false)} />
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     details: {
-        paddingHorizontal: 16,
+        paddingHorizontal: 10 * rem,
         flex: 1,
     },
     memberList: {

@@ -15,7 +15,7 @@ const sizes = {
 const fontSizes = {
     xs: 8 * rem,
     sm: 12 * rem,
-    md: 18 * rem,
+    md: 16 * rem,
     lg: 24 * rem,
 };
 

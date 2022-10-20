@@ -12,7 +12,11 @@ export const Button: FC<Props> = ({ title, onPress, style, loading, ...props }) 
     return (
         <TouchableHighlight
             {...props}
-            style={[styles.button_container, style]}
+            style={[
+                styles.button_container,
+                { backgroundColor: props.disabled ? Colors.light_gray : Colors.yellow },
+                style,
+            ]}
             onPress={onPress}
             underlayColor={props.underlayColor || Colors.primary_light}
         >
@@ -36,7 +40,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     button_container: {
-        backgroundColor: Colors.yellow,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,

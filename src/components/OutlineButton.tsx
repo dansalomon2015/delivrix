@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Pressable, StyleSheet, View, ViewStyle } from "react-native";
+import { StyleSheet, TouchableHighlight, View, ViewStyle } from "react-native";
 import { Colors } from "src/utils";
 import { Text } from "./Text.styled";
 
@@ -12,20 +12,24 @@ interface Props {
 
 export const OutlineButton: FC<Props> = ({ title, renderLeftIcon, style, onPress }) => {
     return (
-        <Pressable style={[styles.container, style]} onPress={onPress}>
-            {renderLeftIcon && <View style={{ marginRight: 5 }}>{renderLeftIcon}</View>}
-            <Text>{title}</Text>
-        </Pressable>
+        <TouchableHighlight style={[styles.container, style]} onPress={onPress} underlayColor={Colors.light_gray}>
+            <View style={styles.content}>
+                {renderLeftIcon && <View style={{ marginRight: !!title ? 5 : 0 }}>{renderLeftIcon}</View>}
+                {!!title && <Text>{title}</Text>}
+            </View>
+        </TouchableHighlight>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: "row",
-        alignItems: "center",
         borderColor: Colors.dark,
         borderWidth: 1,
         borderRadius: 100,
         paddingHorizontal: 10,
+    },
+    content: {
+        flexDirection: "row",
+        alignItems: "center",
     },
 });

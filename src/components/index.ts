@@ -16,3 +16,8 @@ export * from "./QrCodeModal";
 export * from "./OutlineButton";
 export * from "./AddMemberModal";
 export * from "./ShopsList";
+export * from "./DelivriesCard";
+export * from "./OrderFormModal";
+export * from "./BR.styled";
+export * from "./TodaysDeliveries";
+export * from "./TomorrowDeliveries";

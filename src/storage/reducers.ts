@@ -20,6 +20,7 @@ const appSlice = createSlice({
         logout: (state) => {
             state.firstLaunch = true;
             state.user = undefined;
+            state.currentShop = undefined;
         },
         setCurrentShop: (state, action: PayloadAction<ShopType>) => {
             state.currentShop = action.payload;

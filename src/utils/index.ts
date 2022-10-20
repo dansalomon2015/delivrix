@@ -4,3 +4,4 @@ export * from "./fontFamily";
 export * from "./constants";
 export * from "./fontSize";
 export * from "./config";
+export * from "./functions";

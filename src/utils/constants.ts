@@ -18,3 +18,5 @@ export const sizes = {
 };
 
 export const USERS_COLLLECTION_LABEL = "users";
+
+export const DELIVERY_ITEM_WIDTH = entireScreenWidth * 0.75;

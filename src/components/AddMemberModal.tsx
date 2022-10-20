@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Modal, Pressable, StyleSheet, View } from "react-native";
+import { Modal, StyleSheet, View } from "react-native";
 import { Colors, entireScreenHeight, entireScreenWidth, rem, ROLES, ShopType, UserType } from "@utils";
 import { Container } from "./Container";
-import { Text } from "./Text.styled";
 import I18n from "@locales";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import QRCodeScanner from "react-native-qrcode-scanner";
@@ -11,6 +10,7 @@ import { getUserbyId, updateMembership } from "@api";
 import { Loader } from "./Loader";
 import { DialogBox } from "./DialogBox";
 import Toast from "react-native-toast-message";
+import { ModalCloseButton } from "./ModalCloseButton";
 
 export const AddMemberModal: React.FC<{ visible?: boolean; close: () => void; shop: ShopType }> = ({
     visible,
@@ -64,10 +64,7 @@ export const AddMemberModal: React.FC<{ visible?: boolean; close: () => void; sh
                         size={24 * rem}
                         onPress={() => toggle_torh(!torch)}
                     />
-                    <Pressable style={styles.button} onPress={close}>
-                        <Text mr={5}>{I18n.t("dialog.close")}</Text>
-                        <Icon name="close-circle-outline" color={Colors.dark} size={16 * rem} />
-                    </Pressable>
+                    <ModalCloseButton onPress={close} />
                 </View>
                 <QRCodeScanner
                     onRead={onSuccess}
@@ -97,14 +94,6 @@ export const AddMemberModal: React.FC<{ visible?: boolean; close: () => void; sh
 };
 
 const styles = StyleSheet.create({
-    button: {
-        flexDirection: "row",
-        alignItems: "center",
-        backgroundColor: Colors.primary,
-        paddingHorizontal: 10,
-        paddingVertical: 5,
-        borderRadius: 100,
-    },
     button_container: {
         flexDirection: "row",
         justifyContent: "space-between",

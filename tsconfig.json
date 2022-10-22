@@ -21,8 +21,7 @@
             "@navigation": ["./src/navigation/"],
             "@components": ["./src/components/"],
             "@assets": ["./src/assets/"],
-            "@hooks": ["./src/hooks/"],
-            "@libs": ["./src/libs/"]
+            "@hooks": ["./src/hooks/"]
         }
     },
     "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]

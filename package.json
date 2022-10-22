@@ -79,6 +79,7 @@
         "babel-jest": "^29.0.1",
         "babel-plugin-module-resolver": "^4.1.0",
         "eslint": "^8.23.0",
+        "firestore-jest-mock": "^0.19.0",
         "jest": "^29.0.1",
         "metro-react-native-babel-preset": "^0.72.1",
         "react-test-renderer": "17.0.2",
@@ -103,7 +104,7 @@
         ],
         "moduleNameMapper": {
             "^image![a-zA-Z0-9$_-]+$": "GlobalImageStub",
-            "^[@./a-zA-Z0-9$_-]+\\.(png|gif)$": "RelativeImageStub"
+            "^[@./a-zA-Z0-9$_-]+\\.(png|gif)$": "<rootDir>/node_modules/react-native/Libraries/Image/RelativeImageStub"
         },
         "transform": {
             "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"

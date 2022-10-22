@@ -1,3 +1,4 @@
+import firestore from "@react-native-firebase/firestore";
 import {
     ClientType,
     OrderType,
@@ -7,7 +8,6 @@ import {
     USERS_COLLLECTION_LABEL,
     UserType,
 } from "@utils";
-import firestore from "@react-native-firebase/firestore";
 
 const usersCollection = firestore().collection(USERS_COLLLECTION_LABEL);
 const shopsCollection = firestore().collection("shops");

@@ -36,38 +36,10 @@ const HorizontalList: FC<{ list: UserMemberType[]; count: number; viewAll: () =>
     count,
     viewAll,
 }) => {
-    const dispatch = useDispatch();
     return (
         <View style={styles.conatainer_horizontal}>
             {list.map((member, i) => {
-                const {
-                    shop,
-                    roles,
-                    user: { id },
-                } = member;
-                const { pendingDeliveries, notAssignedDeliveries } = useStore({
-                    shopId: shop.id,
-                    memberUserId: roles.indexOf(ROLES.ADMIN) ? id : undefined,
-                });
-                let _count = pendingDeliveries.length + notAssignedDeliveries.length;
-                return (
-                    <View key={i}>
-                        <Avatar item={shop} size="sm" ml={10} onPress={() => dispatch(setCurrentShop(shop))} />
-                        {!!_count && (
-                            <View
-                                style={[styles.counter_container, { right: -4, top: -4, backgroundColor: Colors.dark }]}
-                            >
-                                <TextMedium
-                                    color={Colors.white}
-                                    fontSize={FontSize.tiny}
-                                    lineHeight={FontSize.tiny + 2}
-                                >
-                                    {_count}
-                                </TextMedium>
-                            </View>
-                        )}
-                    </View>
-                );
+                return <ListItem member={member} key={i} />;
             })}
             <Pressable style={styles.button} onPress={viewAll}>
                 <Icon name="chevron-right" size={14 * rem} />
@@ -77,6 +49,33 @@ const HorizontalList: FC<{ list: UserMemberType[]; count: number; viewAll: () =>
                     </TextMedium>
                 </View>
             </Pressable>
+        </View>
+    );
+};
+
+const ListItem: FC<{ member: UserMemberType }> = ({ member }) => {
+    const dispatch = useDispatch();
+    const {
+        shop,
+        roles,
+        user: { id },
+    } = member;
+    const { pendingDeliveries, notAssignedDeliveries } = useStore({
+        shopId: shop.id,
+        memberUserId: roles.indexOf(ROLES.ADMIN) ? id : undefined,
+    });
+    let _count = pendingDeliveries.length + notAssignedDeliveries.length;
+
+    return (
+        <View>
+            <Avatar item={shop} size="sm" ml={10} onPress={() => dispatch(setCurrentShop(shop))} />
+            {!!_count && (
+                <View style={[styles.counter_container, { right: -4, top: -4, backgroundColor: Colors.dark }]}>
+                    <TextMedium color={Colors.white} fontSize={FontSize.tiny} lineHeight={FontSize.tiny + 2}>
+                        {_count}
+                    </TextMedium>
+                </View>
+            )}
         </View>
     );
 };

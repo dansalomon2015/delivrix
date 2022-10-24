@@ -7,7 +7,6 @@ import appSlice from "./reducers";
 const persistConfig = {
     key: "root",
     storage: storage,
-    timeout: 1,
 };
 
 const _persistedReducer = persistReducer(persistConfig, appSlice.reducer);

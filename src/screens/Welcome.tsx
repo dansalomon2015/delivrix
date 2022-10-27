@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import { Text, Container, TextBold, LoginButton, Loader } from "@components";
+import { Linking, StyleSheet, View } from "react-native";
+import { Text, Container, TextBold, LoginButton, Loader, TextMedium } from "@components";
 import { Colors, entireScreenHeight, entireScreenWidth, FontSize, rem, ren } from "@utils";
 import AppIntroSlider from "react-native-app-intro-slider";
 import FastImage from "react-native-fast-image";
@@ -24,6 +24,10 @@ export const Welcome = () => {
                 </Text>
             </View>
         );
+    };
+
+    const privacy = () => {
+        Linking.openURL("https://www.freeprivacypolicy.com/live/d5f02dff-d929-458d-893e-9aa65c63d898");
     };
 
     const slides = [
@@ -62,6 +66,17 @@ export const Welcome = () => {
             </View>
             <View style={styles.bottom}>
                 <LoginButton setLoading={setLoading} />
+
+                <TextMedium fontSize={12 * rem} color={Colors.dark} textAlign="center" mt={10}>
+                    {I18n.t("launcher.condition_text")}{" "}
+                    <Text
+                        fontSize={12 * rem}
+                        onPress={privacy}
+                        style={[{ color: "blue", textDecorationLine: "underline" }]}
+                    >
+                        {I18n.t("launcher.privacy")}
+                    </Text>
+                </TextMedium>
             </View>
             <Loader loading={loading} />
         </Container>

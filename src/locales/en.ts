@@ -8,6 +8,8 @@ export default {
         in_realtime: "of your delivery in realtime",
         skip: "Skip",
         login_gmail: "Login with Gmail",
+        condition_text: "By continuing, you agree that you have read our",
+        privacy: "Privacy policy",
     },
     error: {
         unknown_error: "An unexpected error occurs. Please try again later.",

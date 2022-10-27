@@ -8,6 +8,8 @@ export default {
         in_realtime: "de vos livraisons en temps réel",
         skip: "Passer",
         login_gmail: "Se connecter avec Gmail",
+        condition_text: "En continuant, vous affirmez avoir lu notre",
+        privacy: "Politique de confidentialité",
     },
     error: {
         unknown_error: "Une erreur inconnue est survenue. Veuillez réesssayer.",

@@ -85,7 +85,6 @@ project.ext.react = [
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
-apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -146,6 +145,10 @@ android {
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
         missingDimensionStrategy 'react-native-camera', 'general'
 
+        // Add detox
+        testBuildType System.getProperty('testBuildType', 'release')
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+
         if (isNewArchitectureEnabled()) {
             // We configure the NDK build only if you decide to opt-in for the New Architecture.
             externalNativeBuild {
@@ -174,6 +177,8 @@ android {
                 }
             }
         }
+
+        
     }
 
     if (isNewArchitectureEnabled()) {
@@ -246,6 +251,11 @@ android {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
+        releaseE2E {
+            initWith release
+            setMatchingFallbacks('release')
+            proguardFile "${rootProject.projectDir}/../node_modules/detox/android/detox/proguard-rules-app.pro"
+        }
     }
 
     // applicationVariants are e.g. debug, release
@@ -278,6 +288,10 @@ dependencies {
     implementation "com.google.firebase:firebase-firestore"
     implementation 'com.google.firebase:firebase-crashlytics'
     implementation 'com.google.android.gms:play-services-auth:20.3.0'
+
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    androidTestImplementation('com.wix:detox:+') {transtitive : true }
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'

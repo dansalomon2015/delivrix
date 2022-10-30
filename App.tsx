@@ -6,7 +6,6 @@ import { Colors } from "@utils";
 import Router from "@navigation";
 import { persistor, store } from "@storage";
 import Toast from "react-native-toast-message";
-import codePush from "react-native-code-push";
 
 const App = () => {
     return (
@@ -22,4 +21,4 @@ const App = () => {
     );
 };
 
-export default codePush(App);
+export default App;

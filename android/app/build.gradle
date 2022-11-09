@@ -143,7 +143,7 @@ android {
         versionCode 5
         versionName "1.0.1"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
-        missingDimensionStrategy 'react-native-camera', 'general'
+        missingDimensionStrategy 'react-native-camera', 'general', 'detox', 'full'
 
         // Add detox
         testBuildType System.getProperty('testBuildType', 'release')
@@ -279,7 +279,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     //noinspection GradleDynamicVersion
-    implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation "com.facebook.react:react-native:0.68.2"  // From node_modules
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
@@ -291,7 +291,7 @@ dependencies {
 
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    androidTestImplementation('com.wix:detox:+') {transtitive : true }
+    androidTestImplementation('com.wix:detox:+')
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'

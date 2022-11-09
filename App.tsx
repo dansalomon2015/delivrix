@@ -10,7 +10,9 @@ import Toast from "react-native-toast-message";
 const App = () => {
     return (
         <SafeAreaView style={{ backgroundColor: Colors.white, flex: 1 }}>
-            <StatusBar barStyle={"dark-content"} backgroundColor={Colors.white} />
+            <SafeAreaView>
+                <StatusBar barStyle={"dark-content"} backgroundColor={Colors.white} />
+            </SafeAreaView>
             <Provider store={store}>
                 <PersistGate loading={null} persistor={persistor}>
                     <Router />

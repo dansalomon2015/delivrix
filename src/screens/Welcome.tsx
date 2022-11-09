@@ -55,7 +55,7 @@ export const Welcome = () => {
     ];
 
     return (
-        <Container bgcolor={Colors.primary}>
+        <Container bgcolor={Colors.primary} testID="welcome">
             <View style={styles.main}>
                 <AppIntroSlider
                     renderItem={_renderItem}

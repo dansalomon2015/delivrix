@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import { Modal, ModalProps, StyleSheet, View } from "react-native";
-import { Colors, entireScreenWidth, rem } from "@utils";
 
 interface Props extends ModalProps {
     onClose?: () => void;

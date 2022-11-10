@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from "react";
+import React, { FC, useMemo, useState } from "react";
 import { FlatListProps, Linking, StyleSheet, TouchableNativeFeedback, View } from "react-native";
 import {
     Colors,
@@ -17,6 +17,7 @@ import { TextBold } from "./TextBold.styled";
 import FeatherIcon from "react-native-vector-icons/Feather";
 import IonIcon from "react-native-vector-icons/Ionicons";
 import { TextMedium } from "./TextMedium.styled";
+import { DeliveryDetailsModal } from "./DeliveryDetailsModal";
 
 interface Props extends FlatListProps<OrderType> {}
 
@@ -49,6 +50,8 @@ export const DeliveryItem: FC<{ delivery: OrderType }> = ({ delivery }) => {
         paymentMethod,
     } = delivery;
 
+    const [detailsVisible, setDetailsVisible] = useState(false);
+
     const getPaymentIconName = useMemo(() => {
         switch (paymentMethod) {
             case PaymentMethods.CARD:
@@ -60,7 +63,10 @@ export const DeliveryItem: FC<{ delivery: OrderType }> = ({ delivery }) => {
         }
     }, [paymentMethod]);
     return (
-        <TouchableNativeFeedback background={TouchableNativeFeedback.Ripple(Colors.primary_light, false)}>
+        <TouchableNativeFeedback
+            onPress={() => setDetailsVisible(true)}
+            background={TouchableNativeFeedback.Ripple(Colors.primary_light, false)}
+        >
             <View style={styles.container}>
                 <View style={{ flex: 1 }}>
                     <View style={styles.header}>
@@ -78,9 +84,9 @@ export const DeliveryItem: FC<{ delivery: OrderType }> = ({ delivery }) => {
                         <FeatherIcon name="shopping-cart" size={14 * rem} style={{ marginTop: 6 * ren }} />
                         <View style={styles.products}>
                             {products.map((product) => {
-                                const { name, quantity } = product;
+                                const { name, quantity, id } = product;
                                 return (
-                                    <View style={styles.productItem}>
+                                    <View style={styles.productItem} key={id}>
                                         <TextBold fontSize={FontSize.small} lineHeight={FontSize.small + 5}>
                                             {name} ({quantity})
                                         </TextBold>
@@ -131,6 +137,13 @@ export const DeliveryItem: FC<{ delivery: OrderType }> = ({ delivery }) => {
                         />
                     </View>
                 </View>
+                {detailsVisible && (
+                    <DeliveryDetailsModal
+                        visible={detailsVisible}
+                        onClose={() => setDetailsVisible(false)}
+                        delivery={delivery}
+                    />
+                )}
             </View>
         </TouchableNativeFeedback>
     );

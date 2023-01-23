@@ -7,6 +7,8 @@ import Router from "@navigation";
 import { persistor, store } from "@storage";
 import Toast from "react-native-toast-message";
 import codePush from "react-native-code-push";
+import { NotificationReceiver } from "src/notifications";
+import { NavigationContainer } from "@react-navigation/native";
 
 const App = () => {
     return (
@@ -14,7 +16,10 @@ const App = () => {
             <StatusBar barStyle={"dark-content"} backgroundColor={Colors.white} />
             <Provider store={store}>
                 <PersistGate loading={null} persistor={persistor}>
-                    <Router />
+                    <NavigationContainer>
+                        <NotificationReceiver />
+                        <Router />
+                    </NavigationContainer>
                 </PersistGate>
             </Provider>
             <Toast />

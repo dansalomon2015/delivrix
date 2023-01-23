@@ -27,6 +27,6 @@ let persistor = persistStore(store);
 type AppStateType = ReturnType<typeof store.getState>;
 const useAppSelector: TypedUseSelectorHook<AppStateType> = useSelector;
 
-const { storeUser, updateLaunchStatus, logout, setCurrentShop } = appSlice.actions;
+const { storeUser, updateLaunchStatus, logout, setCurrentShop, setJumpToProfile } = appSlice.actions;
 
-export { store, persistor, useAppSelector, storeUser, updateLaunchStatus, logout, setCurrentShop };
+export { store, persistor, useAppSelector, storeUser, updateLaunchStatus, logout, setCurrentShop, setJumpToProfile };

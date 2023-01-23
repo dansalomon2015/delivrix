@@ -15,6 +15,7 @@ export type RootStateType = {
     firstLaunch: boolean;
     user?: UserType;
     currentShop?: ShopType;
+    jumpToProfile: boolean;
 };
 
 export type UserType = {

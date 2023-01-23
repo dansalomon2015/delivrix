@@ -5,6 +5,7 @@ const initialState: RootStateType = {
     firstLaunch: true,
     user: undefined,
     currentShop: undefined,
+    jumpToProfile: true,
 };
 
 const appSlice = createSlice({
@@ -24,6 +25,9 @@ const appSlice = createSlice({
         },
         setCurrentShop: (state, action: PayloadAction<ShopType>) => {
             state.currentShop = action.payload;
+        },
+        setJumpToProfile: (state, action: PayloadAction<boolean>) => {
+            state.jumpToProfile = action.payload;
         },
     },
 });

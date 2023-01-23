@@ -278,6 +278,7 @@ dependencies {
     implementation "com.google.firebase:firebase-firestore"
     implementation 'com.google.firebase:firebase-crashlytics'
     implementation 'com.google.android.gms:play-services-auth:20.3.0'
+    implementation "com.google.firebase:firebase-messaging"
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'
